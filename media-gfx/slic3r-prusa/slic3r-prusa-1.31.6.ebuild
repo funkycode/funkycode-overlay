@@ -55,6 +55,7 @@ DEPEND="${RDEPEND}
 	>=dev-perl/ExtUtils-XSpp-0.170.0
 	>=dev-perl/Module-Build-0.380.0
 	>=dev-perl/Module-Build-WithXSpp-0.140.0
+	dev-perl/Devel-CheckLib
 	>=virtual/perl-ExtUtils-MakeMaker-6.800.0
 	>=virtual/perl-ExtUtils-ParseXS-3.220.0
 	test? (	virtual/perl-Test-Harness
