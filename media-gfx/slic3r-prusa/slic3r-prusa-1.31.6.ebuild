@@ -63,7 +63,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/Slic3r-version_${PV}/xs"
 
 src_prepare() {
-	pushd "${WORKDIR}/Slic3r-Slic3r-version_${PV}" || die
+	pushd "${WORKDIR}/Slic3r-version_${PV}" || die
 	eapply "${FILESDIR}/${P}-adjust_var_path.patch"
 	eapply_user
 	popd || die
