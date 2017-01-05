@@ -13,7 +13,7 @@ DESCRIPTION="Sublime Text is a sophisticated text editor for code, html and pros
 HOMEPAGE="http://www.sublimetext.com"
 COMMON_URI="https://download.sublimetext.com"
 SRC_URI="amd64? ( ${COMMON_URI}/${MY_P}_x64.tar.bz2 )
-	x86? ( ${COMMON_URI}/${MY_P}_x32.tar.bz2 )"
+    x86? ( ${COMMON_URI}/${MY_P}_x32.tar.bz2 )"
 LICENSE="Sublime"
 SLOT="0"
 KEYWORDS="~*"
@@ -21,21 +21,22 @@ IUSE=""
 RESTRICT="mirror"
 
 RDEPEND="media-libs/libpng
-	>=x11-libs/gtk+-2.24.8-r1:2"
+    >=x11-libs/gtk+-2.24.8-r1:2"
 
 src_install() {
-	insinto /opt/${PN}
-	into /opt/${PN}
-	exeinto /opt/${PN}
-	doins -r "Icon"
-	doins -r "Packages"
-	doins "changelog.txt"
-	doins "python3.3.zip"
-	doins "sublime_plugin.py"
-	doins "sublime.py"
-	doexe "sublime_text"
-	doexe "plugin_host"
-	doexe "crash_reporter"
-	dosym "/opt/${PN}/sublime_text" /usr/bin/subl
-	make_desktop_entry "subl" "Sublime Text Editor" "accessories-text-editor" "TextEditor"
+    insinto /opt/${PN}
+    into /opt/${PN}
+    exeinto /opt/${PN}
+    doins -r "Icon"
+    doins -r "Packages"
+    doins "changelog.txt"
+    doins "python3.3.zip"
+    doins "sublime_plugin.py"
+    doins "sublime.py"
+    doexe "sublime_text"
+    doexe "plugin_host"
+    doexe "crash_reporter"
+    dosym "/opt/${PN}/sublime_text" /usr/bin/subl
+    make_desktop_entry "subl" "Sublime Text Editor" "accessories-text-editor" "TextEditor"
 }
+

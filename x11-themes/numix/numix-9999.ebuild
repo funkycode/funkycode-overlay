@@ -1,29 +1,27 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=5
 
 inherit git-r3
 
-DESCRIPTION="modern flat theme"
-HOMEPAGE="https://github.com/shimmerproject/Numix"
-EGIT_REPO_URI="http://github.com/shimmerproject/Numix"
+_PN="Numix"
 
-LICENSE="GPL-2"
-SLOT="0"
+DESCRIPTION="A modern flat theme that supports Gnome, Unity, XFCE and Openbox."
+HOMEPAGE="https://numixproject.org"
+
+SRC_URI=""
+EGIT_REPO_URI="https://github.com/shimmerproject/${_PN}.git"
 KEYWORDS=""
+LICENSE="GPL-3.0+"
+SLOT="0"
 
-RDEPEND="
-	x11-themes/gtk-engines-murrine
-"
-DEPEND="
-	${RDEPEND}
-"
-
-RESTRICT="binchecks strip"
+DEPEND="x11-themes/gtk-engines-murrine"
+RDEPEND="${DEPEND}"
 
 src_install() {
-	insinto /usr/share/themes/${PN}
-	doins -r *
+	insinto /usr/share/themes/Numix
+	doins -r .
+	dodoc README.md
 }
