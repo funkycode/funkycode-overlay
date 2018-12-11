@@ -68,7 +68,7 @@ src_install() {
 	domenu opt/${MY_PN^}/linux${arch}/${MY_PN}.desktop
 
 	insinto /opt/${MY_PN}
-	doins opt/${MY_PN^}/linux${arch}/{Gitter,icudtl.dat,libffmpegsumo.so,nw.pak}
+	doins opt/${MY_PN^}/linux${arch}/{Gitter,icudtl.dat,lib/*.so,nw*.pak}
 	insinto /opt/${MY_PN}/locales
 	doins -r opt/${MY_PN^}/linux${arch}/locales/.
 	fperms +x /opt/${MY_PN}/${MY_PN^}
