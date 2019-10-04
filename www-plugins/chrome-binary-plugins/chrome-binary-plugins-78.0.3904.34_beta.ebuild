@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2012-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit multilib unpacker
 
@@ -33,10 +33,14 @@ SRC_URI="https://dl.google.com/linux/chrome/deb/pool/main/g/${MY_PN}/${MY_P}_amd
 KEYWORDS="-* ~amd64"
 
 LICENSE="google-chrome"
-IUSE="+widevine"
 RESTRICT="bindist mirror strip"
 
-RDEPEND="widevine? ( !<www-client/chromium-57[widevine(-)] )"
+RDEPEND="
+	dev-libs/glib:2
+	dev-libs/nspr
+	dev-libs/nss
+	!<www-client/chromium-57[widevine(-)]
+"
 
 for x in 0 beta stable unstable; do
 	if [[ ${SLOT} != ${x} ]]; then
@@ -52,10 +56,6 @@ pkg_nofetch() {
 }
 
 src_install() {
-	insinto /usr/$(get_libdir)/chromium
-	if use widevine; then
-		doins libwidevinecdm.so libwidevinecdmadapter.so
-		dosym ../chromium/libwidevinecdm.so /usr/$(get_libdir)/chromium-browser/libwidevinecdm.so
-		dosym ../chromium/libwidevinecdmadapter.so /usr/$(get_libdir)/chromium-browser/libwidevinecdmadapter.so
-	fi
+	insinto "/usr/$(get_libdir)/chromium-browser"
+	doins -r WidevineCdm
 }
