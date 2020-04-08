@@ -21,7 +21,7 @@ REQUIRED_USE=""
 
 CDEPEND="
 	>=dev-python/requests-2.4.3[${PYTHON_USEDEP}]
-	=dev-python/prompt_toolkit-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/prompt_toolkit-1.0.0[${PYTHON_USEDEP}]
 	dev-python/dbus-python[${PYTHON_USEDEP}]
 "
 RDEPEND="${CDEPEND}
