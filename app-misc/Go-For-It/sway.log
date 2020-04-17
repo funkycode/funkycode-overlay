@@ -1,0 +1,26 @@
+2020-04-17 13:53:03 - [sway/main.c:152] Linux batata 5.6.3-gentoo #8 SMP Sat Apr 11 18:22:59 IDT 2020 x86_64 Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz GenuineIntel GNU/Linux
+2020-04-17 13:53:03 - [sway/main.c:168] Contents of /etc/lsb-release:
+2020-04-17 13:53:03 - [sway/main.c:152] DISTRIB_ID="Gentoo"
+2020-04-17 13:53:03 - [sway/main.c:168] Contents of /etc/os-release:
+2020-04-17 13:53:03 - [sway/main.c:152] ID="funtoo"
+2020-04-17 13:53:03 - [sway/main.c:152] NAME="Funtoo"
+2020-04-17 13:53:03 - [sway/main.c:152] PRETTY_NAME="Funtoo Linux"
+2020-04-17 13:53:03 - [sway/main.c:152] ANSI_COLOR="0;34"
+2020-04-17 13:53:03 - [sway/main.c:152] HOME_URL="https://www.funtoo.org"
+2020-04-17 13:53:03 - [sway/main.c:152] BUG_REPORT_URL="https://bugs.funtoo.org"
+2020-04-17 13:53:03 - [sway/main.c:168] Contents of /etc/gentoo-release:
+2020-04-17 13:53:03 - [sway/main.c:152] Funtoo Linux 1.4
+2020-04-17 13:53:03 - [sway/main.c:140] LD_LIBRARY_PATH=(null)
+2020-04-17 13:53:03 - [sway/main.c:140] LD_PRELOAD=(null)
+2020-04-17 13:53:03 - [sway/main.c:140] PATH=/sbin:/bin:/usr/sbin:/usr/bin
+2020-04-17 13:53:03 - [sway/main.c:140] SWAYSOCK=(null)
+2020-04-17 13:53:03 - [sway/main.c:95] !!! Proprietary Nvidia drivers are in use !!!
+2020-04-17 13:53:03 - [sway/server.c:40] Preparing Wayland server initialization
+2020-04-17 13:53:03 - [backend/session/logind.c:821] Successfully loaded logind session
+2020-04-17 13:53:03 - [backend/backend.c:157] Found 1 GPUs
+2020-04-17 13:53:03 - [backend/drm/backend.c:159] Initializing DRM backend for /dev/dri/card0 (nvidia-drm)
+2020-04-17 13:53:03 - [backend/drm/drm.c:51] DRM universal planes unsupported
+2020-04-17 13:53:03 - [backend/backend.c:163] Failed to open DRM device 9
+2020-04-17 13:53:03 - [backend/backend.c:304] Failed to open any DRM device
+2020-04-17 13:53:03 - [backend/noop/backend.c:51] Creating noop backend
+2020-04-17 13:53:03 - [sway/server.c:47] Unable to create backend
