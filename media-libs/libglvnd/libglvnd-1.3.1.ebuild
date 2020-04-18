@@ -16,7 +16,7 @@ SRC_URI="${HOMEPAGE}/releases/download/v${PV}/${P}.tar.gz"
 KEYWORDS="*"
 LICENSE="MIT"
 SLOT="0"
-IUSE="+asm +glx +gles +egl debug"
+IUSE="+glx +gles +egl debug"
 
 GITHUB_REPO="$PN"
 GITHUB_USER="NVIDIA"
@@ -54,7 +54,7 @@ src_prepare() {
 }
 
 src_configure() {
-	ECONF_SOURCE=${S} econf $(usex debug "--enable-debug" "") $(usex asm "" "--disable-asm") $(usex glx "" "--disable-glx") $(usex gles "" "--disable-gles") $(usex egl "" "--disable-egl")
+	ECONF_SOURCE=${S} econf $(usex debug "--enable-debug" "") $(usex glx "" "--disable-glx") $(usex gles "" "--disable-gles") $(usex egl "" "--disable-egl")
 }
 
 src_install() {
