@@ -99,7 +99,7 @@ DEPEND="${CDEPEND}
 		)
 	)
 	glvnd? (
-		media-libs/libglvn
+		media-libs/libglvnd
 	)
 	"
 
