@@ -12,6 +12,8 @@ HOMEPAGE="https://github.com/libratbag/piper"
 SRC_URI="https://github.com/libratbag/piper/archive/${PV}.tar.gz -> ${PF}.tar.gz"
 LICENSE="GPL-2"
 
+KEYWORDS="amd64 arm64 ~ppc64 x86"
+
 SLOT="0"
 
 DEPEND="
