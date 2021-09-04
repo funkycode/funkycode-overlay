@@ -29,8 +29,6 @@ KEYWORDS="-* amd64"
 IUSE="+X +driver static-libs +tools wayland"
 
 COMMON_DEPEND="
-	acct-group/video
-	acct-user/nvpd
 	net-libs/libtirpc
 	tools? (
 		dev-libs/atk
