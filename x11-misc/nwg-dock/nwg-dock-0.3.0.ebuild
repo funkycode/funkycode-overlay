@@ -51,6 +51,12 @@ DEPEND=">=gui-libs/gtk-layer-shell-0.6.0
     x11-libs/gtk+:3"
 RDEPEND="${DEPEND}"
 
+src_compile() {
+#	emake bindata.go || die
+	golang-single_src_compile
+}
+
+
 src_install() {
     dobin bin/nwg-dock
 
