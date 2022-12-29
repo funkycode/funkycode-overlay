@@ -43,7 +43,7 @@ RDEPEND="
 	sys-libs/zlib:=
 	virtual/opengl
 	x11-libs/gtk+:3
-	x11-libs/wxGTK:${WX_GTK_VER}[gui]
+	x11-libs/wxGTK:${WX_GTK_VER}[X,opengl]
 "
 DEPEND="${RDEPEND}
 	media-libs/qhull[static-libs]
