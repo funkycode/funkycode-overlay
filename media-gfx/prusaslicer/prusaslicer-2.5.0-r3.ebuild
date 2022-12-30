@@ -50,15 +50,22 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
-    "${FILESDIR}/${PN}-2.6.0-wayland.patch"
-    "${FILESDIR}/${PN}-2.6.0-wx-lang.patch"
+	"${FILESDIR}/${PN}-2.5.0_alpha2-boost-fixes.patch"
+	"${FILESDIR}/${PN}-2.5.0_rc1-cereal-1.3.1.patch"
+	"${FILESDIR}/${PN}-2.5.0_rc1-fix-tests.patch"
+	"${FILESDIR}/${PN}-2.5.0_boost-1.81-std-wxString-to-std-wstring.patch"
+	"${FILESDIR}/${PN}-2.5.0-glew.patch"
+	"${FILESDIR}/${PN}-2.5.0-wxwidget.patch"
+	"${FILESDIR}/${PN}-2.5.0-wayland.patch"
 )
 
 S="${WORKDIR}/${MY_PN}-version_${MY_PV}"
 
 src_prepare() {
 	sed -i -e 's/PrusaSlicer-${SLIC3R_VERSION}+UNKNOWN/PrusaSlicer-${SLIC3R_VERSION}+Gentoo/g' version.inc || die
-	sed -i -e 's/add_library(libexpat INTERFACE)/#add_library(libexpat INTERFACE)/g' CMakeLists.txt || die
+
+	sed -i -e 's/find_package(OpenCASCADE 7.6.2 REQUIRED)/find_package(OpenCASCADE REQUIRED)/g' \
+		src/occt_wrapper/CMakeLists.txt || die
 	cmake_src_prepare
 }
 
@@ -76,7 +83,7 @@ src_configure() {
 		-DSLIC3R_GUI=ON
 		-DSLIC3R_PCH=OFF
 		-DSLIC3R_STATIC=OFF
-		-DSLIC3R_WX_STABLE=ON
+		-DSLIC3R_WX_STABLE=OFF
 		-Wno-dev
 	)
 
