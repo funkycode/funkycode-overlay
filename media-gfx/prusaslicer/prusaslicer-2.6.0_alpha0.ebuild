@@ -49,10 +49,16 @@ DEPEND="${RDEPEND}
 	media-libs/qhull[static-libs]
 "
 
+PATCHES=(
+    "${FILESDIR}/${PN}-2.6.0-wayland.patch"
+    "${FILESDIR}/${PN}-2.6.0-wx-lang.patch"
+)
+
 S="${WORKDIR}/${MY_PN}-version_${MY_PV}"
 
 src_prepare() {
-#	sed -i -e 's/PrusaSlicer-${SLIC3R_VERSION}+UNKNOWN/PrusaSlicer-${SLIC3R_VERSION}+Gentoo/g' version.inc || die
+	sed -i -e 's/PrusaSlicer-${SLIC3R_VERSION}+UNKNOWN/PrusaSlicer-${SLIC3R_VERSION}+Gentoo/g' version.inc || die
+	sed -i -e 's/add_library(libexpat INTERFACE)/#add_library(libexpat INTERFACE)/g' CMakeLists.txt || die
 	cmake_src_prepare
 }
 

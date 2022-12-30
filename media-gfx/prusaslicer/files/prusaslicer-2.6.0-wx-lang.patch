@@ -1,0 +1,36 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 002cd3456..fd96814ef 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -463,7 +463,7 @@ include_directories(BEFORE SYSTEM ${EIGEN3_INCLUDE_DIR})
+ 
+ find_package(EXPAT REQUIRED)
+ 
+-add_library(libexpat INTERFACE)
++#add_library(libexpat INTERFACE)
+ 
+ if (TARGET EXPAT::EXPAT )
+     target_link_libraries(libexpat INTERFACE EXPAT::EXPAT)
+diff --git a/src/slic3r/GUI/GUI_App.cpp b/src/slic3r/GUI/GUI_App.cpp
+index af9b63acd..af5a43e41 100644
+--- a/src/slic3r/GUI/GUI_App.cpp
++++ b/src/slic3r/GUI/GUI_App.cpp
+@@ -2102,7 +2102,9 @@ bool GUI_App::load_language(wxString language, bool initial)
+ 	    	// Allocating a temporary locale will switch the default wxTranslations to its internal wxTranslations instance.
+ 	    	wxLocale temp_locale;
+ 	    	// Set the current translation's language to default, otherwise GetBestTranslation() may not work (see the wxWidgets source code).
+-	    	wxTranslations::Get()->SetLanguage(wxLANGUAGE_DEFAULT);
++		wxTranslations *wx_trp = wxTranslations::Get();
++		if (wx_trp) {
++                   wx_trp->SetLanguage(wxLANGUAGE_DEFAULT);
+ 	    	// Let the wxFileTranslationsLoader enumerate all translation dictionaries for PrusaSlicer
+ 	    	// and try to match them with the system specific "preferred languages". 
+ 	    	// There seems to be a support for that on Windows and OSX, while on Linuxes the code just returns wxLocale::GetSystemLanguage().
+@@ -2113,6 +2115,7 @@ bool GUI_App::load_language(wxString language, bool initial)
+ 				m_language_info_best = wxLocale::FindLanguageInfo(best_language);
+ 	        	BOOST_LOG_TRIVIAL(trace) << boost::format("Best translation language detected (may be different from user locales): %1%") % m_language_info_best->CanonicalName.ToUTF8().data();
+ 			}
++	       }
+             #ifdef __linux__
+             wxString lc_all;
+             if (wxGetEnv("LC_ALL", &lc_all) && ! lc_all.IsEmpty()) {
