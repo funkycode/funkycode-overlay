@@ -1,16 +1,3 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 002cd3456..fd96814ef 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -463,7 +463,7 @@ include_directories(BEFORE SYSTEM ${EIGEN3_INCLUDE_DIR})
- 
- find_package(EXPAT REQUIRED)
- 
--add_library(libexpat INTERFACE)
-+#add_library(libexpat INTERFACE)
- 
- if (TARGET EXPAT::EXPAT )
-     target_link_libraries(libexpat INTERFACE EXPAT::EXPAT)
 diff --git a/src/slic3r/GUI/GUI_App.cpp b/src/slic3r/GUI/GUI_App.cpp
 index af9b63acd..af5a43e41 100644
 --- a/src/slic3r/GUI/GUI_App.cpp

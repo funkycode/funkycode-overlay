@@ -1,7 +1,0 @@
-[2022-12-29 13:15:18.995697] [0x00007f13a18e39c0] [trace]   Initializing StaticPrintConfigs
-[2022-12-29 13:15:19.001691] [0x00007f13a18e39c0] [debug]   full path: 2879510132087705898
-[2022-12-29 13:15:19.001710] [0x00007f13a18e39c0] [debug]   single instance: undefined. other params: prusa-slicer;--loglevel;5
-[2022-12-29 13:15:19.001713] [0x00007f13a18e39c0] [debug]   full lock path: /home/zogg/.config/PrusaSlicer/cache/2879510132087705898.lock
-[2022-12-29 13:15:19.001870] [0x00007f13a18e39c0] [debug]   Creating lockfile.
-[2022-12-29 13:15:19.001874] [0x00007f13a18e39c0] [info]    Instance check: Another instance not found or single-instance not set.
-[2022-12-29 13:15:19.026721] [0x00007f13a18e39c0] [trace]   System language detected (user locales and such): en_US
