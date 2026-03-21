@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND="
 	dev-vcs/git
-	net-misc/github-cli
+	dev-util/github-cli
 "
 
 BDEPEND="
