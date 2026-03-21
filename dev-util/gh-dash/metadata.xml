@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>maintainer@example.com</email>
+		<name>Overlay Maintainer</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">dlvhdr/gh-dash</remote-id>
+	</upstream>
+	<longdescription>
+		gh-dash is a richly formatted, interactive, and text-based user interface for GitHub.
+		It enables developers to manage pull requests, issues, and workflows directly from their terminal
+		without breaking their workflow.
+	</longdescription>
+</pkgmetadata>
